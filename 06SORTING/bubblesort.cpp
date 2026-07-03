@@ -5,12 +5,17 @@ using namespace std;
 
 void bubble_sort(vector<int> &arr) {
     int n = arr.size();
+    int swap1=0;
 
     for (int i = n - 1; i >= 1; i--) {
         for (int j = 0; j < i; j++) {
             if (arr[j + 1] < arr[j]) {
                 swap(arr[j + 1], arr[j]);
+                swap1=1;
             }
+        }
+        if(swap1==0){ /// time complexity =O(n)
+            break;
         }
     }
 }
