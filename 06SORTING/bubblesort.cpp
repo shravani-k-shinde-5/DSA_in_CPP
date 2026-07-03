@@ -14,7 +14,7 @@ void bubble_sort(vector<int> &arr) {
                 swap1=1;
             }
         }
-        if(swap1==0){ /// time complexity =O(n)
+        if(swap1==0){ /// time complexity =O(n) best case complexity
             break;
         }
     }
