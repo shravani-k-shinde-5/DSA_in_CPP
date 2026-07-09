@@ -40,6 +40,15 @@ void rotate(vector<int>& nums, int k) {
 
         
     };
+    //rotate right
+    void rightRotate(vector<int>& arr, int d) {
+    int n = arr.size();
+    d %= n;
+
+    reverse(arr.begin(), arr.end());
+    reverse(arr.begin(), arr.begin() + d);
+    reverse(arr.begin() + d, arr.end());
+}
 int main() {
     int n;
     cin >> n;
@@ -55,6 +64,17 @@ int main() {
       cout<<arr[i]<<" ";
 
     }
+
+    rotate(arr,7);
+    for(int i=0;i<n;i++){
+      cout<<arr[i];
+    }
+
+    rightRotate(arr,4);
+    for(int i=0;i<n;i++){
+      cout<<arr[i];
+    }
+
 
 
 
