@@ -21,6 +21,40 @@ int missingelement(vector<int>& arr) {
 
    
 }
+///better
+/// 
+int missingelement1(vector<int>& arr) {
+    int N = arr.size() + 1;      // Original range is 1 to N
+
+    vector<int> hash(N + 1, 0);
+
+    // Mark the numbers present
+    for (int i = 0; i < arr.size(); i++) {
+        hash[arr[i]] = 1;
+    }
+
+    // Find the missing number
+    for (int i = 1; i <= N; i++) {
+        if (hash[i] == 0) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+//optimal
+int missingelement2(vector<int>& arr) {
+    int n = arr.size() + 1;
+
+    int sum = (n * (n + 1)) / 2;
+    int sum1 = 0;
+
+    for (int i = 0; i < arr.size(); i++) {
+        sum1 += arr[i];
+    }
+
+    return sum - sum1;
+}
 
 int main() {
     int n;
@@ -33,7 +67,9 @@ int main() {
     }
     
 
-    cout << missingelement(arr);
+    cout << missingelement(arr)<<endl;
+    cout<<missingelement1(arr)<<endl;
+    cout<<missingelement2(arr)<<endl;
 
     return 0;
 }
