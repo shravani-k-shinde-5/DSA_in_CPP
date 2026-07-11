@@ -5,9 +5,11 @@ using namespace std;
 
 void bubble_sort(vector<int> &arr) {
     int n = arr.size();
-    int swap1=0;
+    
 
     for (int i = n - 1; i >= 1; i--) {
+        int swap1=0;
+        
         for (int j = 0; j < i; j++) {
             if (arr[j + 1] < arr[j]) {
                 swap(arr[j + 1], arr[j]);
