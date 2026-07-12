@@ -76,5 +76,3 @@ int main(){
 return 0;
 
 };
-//g++ movezerotoend.cpp -o movezerotoend.exe
-// .\movezerotoend.exe
