@@ -7,3 +7,5 @@ int main(){
     cin>>x;
     cout<<"you have entered "<<x<<endl;
     return 0;}
+
+

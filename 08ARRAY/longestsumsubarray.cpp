@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//brute
+void longestsubarray1(vector <int> &vec,int tar){
+  int len=0;
+  for(int i=0;i<vec.size();i++){
+    int sum =0;
+    for(int j=i;j<vec.size();j++){
+      sum+=vec[j];
+      if(sum==tar){
+        len =max(len,j-i+1);
+      }
+    }
+  }
+  cout<<"the longest subarray "<<len;
+
+}
+///\optimal
+int longestsubarray(vector<int> &vec ,int k){
+  int right =0;
+  int left=0;
+  int sum=vec[0];
+  int len=0;
+  while(right<vec.size()){
+    while(sum<k && left<=right){
+      
+      sum+=vec[right];
+      left++;
+      
+    }
+    if(sum ==k){
+      len=max(len,right-left+1);
+      
+    }
+    right++;
+    if(right<vec.size()){
+      sum+=vec[right];
+
+
+    };
+
+  }
+  return len;
+}
+int main(){
+  vector <int> vec={1,2,4,5,1};
+  longestsubarray1(vec,7);
+
+}
+
+// g++ longestsumsubarray.cpp -o longestsumsubarray.exe
+//.\longestsumsubarray.exe
