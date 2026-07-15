@@ -18,35 +18,35 @@ void longestsubarray1(vector <int> &vec,int tar){
 
 }
 ///\optimal
-int longestsubarray(vector<int> &vec ,int k){
-  int right =0;
-  int left=0;
-  int sum=vec[0];
-  int len=0;
-  while(right<vec.size()){
-    while(sum<k && left<=right){
-      
-      sum+=vec[right];
-      left++;
-      
+int longestsubarray(vector<int> &vec, int k) {
+    int left = 0, right = 0;
+    int sum = 0;
+    int len = 0;
+
+    while (right < vec.size()) {
+        sum += vec[right];
+
+        while (sum > k && left <= right) {
+            sum -= vec[left];
+            left++;
+        }
+
+        if (sum == k) {
+            len = max(len, right - left + 1);
+        }
+
+        right++;
     }
-    if(sum ==k){
-      len=max(len,right-left+1);
-      
-    }
-    right++;
-    if(right<vec.size()){
-      sum+=vec[right];
 
-
-    };
-
-  }
-  return len;
+    return len;
 }
+
 int main(){
   vector <int> vec={1,2,4,5,1};
   longestsubarray1(vec,7);
+  int len=longestsubarray(vec,7);
+  cout<<endl;
+  cout<<len;
 
 }
 
