@@ -10,7 +10,7 @@ void duplicates_from_sorted_array(vector<int>&arr){
       arr[i]=arr[j];
     }
   }
-  return arr.resize(i+1);}
+  arr.resize(i+1);}
 int main(){
   int n;
   cin>>n;

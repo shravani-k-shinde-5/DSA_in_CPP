@@ -41,3 +41,6 @@ int main() {
 }
 // g++ secondlargest.cpp -o secondlargest.exe
 // .\secondlargest.exe
+
+
+"To find the second largest element efficiently, we maintain two variables: largest and second largest. While traversing the array once, if we find a new largest element, we update the second largest with the previous largest value. Otherwise, if the current element is smaller than the largest but greater than the second largest, we update the second largest. This approach finds the result in O(n) time and O(1) space."
