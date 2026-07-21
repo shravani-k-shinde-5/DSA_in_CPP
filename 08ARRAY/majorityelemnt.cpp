@@ -18,3 +18,4 @@ int majority(vector<int>vec){
   }
 
 }
+int majority
