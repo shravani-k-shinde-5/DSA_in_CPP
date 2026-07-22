@@ -69,5 +69,6 @@ int main(){
   }
   
 }
-// g++ sort0s1s2s.cpp -o sort0s1s2s.exe
-//.\sort0s1s2s.exe
+
+
+// g++ kadanesalgo.cpp -o kadanesalgo.exe
